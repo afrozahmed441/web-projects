@@ -1,0 +1,200 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(74, 237, 191);
+  height: 100vh;
+}
+
+:root {
+  --color-white: #fff;
+  --color-black: #000;
+  --color-btn-gen: #31cd5e;
+  --color-btn-fav: #005ec1;
+  --color-btn-show: #7b5ae3;
+}
+
+.container {
+  height: 23rem;
+  width: 60rem;
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.color {
+  color: var(--color-white);
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 1px solid var(--color-black);
+  font-size: 5rem;
+  padding: 0.8rem 4rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.buttons > [class|="btn"] {
+  border: none;
+  padding: 1rem 3rem;
+  border-radius: 0.4rem;
+  margin-right: 1.4rem;
+  font-size: 1.6rem;
+  color: var(--color-white);
+  cursor: pointer;
+  /* background: none; */
+}
+
+.buttons > [class|="btn"]:focus,
+.buttons > [class|="btn"]:active {
+  outline: none;
+  border: none;
+  /* TODO: focus and active */
+}
+
+.btn-gen {
+  background-color: var(--color-btn-gen);
+}
+
+.btn-fav {
+  background-color: var(--color-btn-fav);
+}
+
+.btn-show {
+  background-color: var(--color-btn-show);
+}
+
+.colors-spec {
+  background: linear-gradient(
+    to top left,
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0.8)
+  );
+  border: 0.07rem solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  -webkit-backdrop-filter: blur(0.5rem);
+  backdrop-filter: blur(0.5rem);
+  height: 90vh;
+  width: 80%;
+  position: absolute;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  animation: popup 0.1s ease-in-out;
+}
+
+.colors-container {
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.back {
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-backdrop-filter: blur(0.3rem);
+  backdrop-filter: blur(0.3rem);
+  z-index: 3;
+  transition: all 0.2s;
+}
+
+.hidden {
+  display: none;
+}
+
+.spec {
+  margin-bottom: 3rem;
+}
+
+.label {
+  font-size: 2rem;
+  color: var(--color-white);
+  text-transform: uppercase;
+}
+
+.label-circle {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  margin-right: 1rem;
+  display: inline-block;
+}
+
+.display {
+  background: none;
+  color: var(--color-white);
+  font-size: 1.8rem;
+  border: none;
+  width: 40%;
+}
+
+.display:focus {
+  outline: none;
+  border: none;
+}
+
+.btn-copy {
+  border: none;
+  background: none;
+  color: var(--color-white);
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  background-color: lightsalmon;
+  padding: 0.3rem 1rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+
+.close-spec {
+  font-size: 2.3rem;
+  color: var(--color-white);
+  position: absolute;
+  top: 3.5%;
+  right: 3.5%;
+  cursor: pointer;
+}
+
+.empty {
+  font-size: 3rem;
+  color: var(--color-white);
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+}
+
+/****************** ANIMATIONS *******************/
+@keyframes popup {
+  0% {
+    transform: scale(0.2);
+    opacity: 0;
+  }
+
+  50% {
+    transform: scale(0.5);
+    opacity: 0.3;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
